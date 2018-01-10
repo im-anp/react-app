@@ -1,8 +1,41 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import '../node_modules/font-awesome/css/font-awesome.min.css'; 
+import './styles/style.css';
+import Leftmenu from './component/Leftmenu.js';
+import CountUp from 'react-countup';
+import Balence from './component/Balence.js';
+import Header from './component/Header.js';
+import Graph from './component/Graph.js';
+import Footer from './component/Footer.js';
+import Card from './component/card.js';
+import { Sparklines ,SparklinesLine } from 'react-sparklines';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+class AddOption extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: undefined
+    };
+  }
+  render() {
+      const title = 'hi';
+    return (
+        <div>
+       <Leftmenu />
+       <Header />
+       <Balence />
+       <Card />
+       <Graph />
+       <Footer />
+       </div>
+
+    );
+  }
+}
+
+
+ReactDOM.render(<AddOption />, document.getElementById('app'));
+
 registerServiceWorker();
